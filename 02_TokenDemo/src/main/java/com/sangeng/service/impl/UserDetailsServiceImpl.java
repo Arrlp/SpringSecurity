@@ -39,6 +39,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         if(Objects.isNull(user)){
             throw new RuntimeException("用户名或者密码错误");
         }
+
         //查询对应的权限信息
 //        List<String> list = new ArrayList<>(Arrays.asList("test","admin"));
         List<String> list = menuMapper.selectPermsByUserId(user.getId());
